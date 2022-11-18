@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AuthView.swift
 //  TastyCourse_swiftUI
 //
 //  Created by Fedii Ihor on 17.11.2022.
@@ -7,18 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AuthView: View {
     
     @State private var isAuth = true
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var isTabBarShow = false
     
     var body: some View {
-//            ZStack {
-//                Image("pizza")
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .blur(radius: isAuth ? 0 : 12)
                 
                 VStack(spacing: 30) {
                     Text(isAuth ? "Authorisation" : "Registration")
@@ -53,8 +50,13 @@ struct ContentView: View {
                         Button{
                             if isAuth {
                                 print("authorization")
+                                isTabBarShow.toggle()
                             } else {
                                 print("registration")
+                                self.email = ""
+                                self.password = ""
+                                self.confirmPassword = ""
+                                self.isAuth.toggle()
                             }
                         } label: {
                             Text(isAuth ? "Войти" : "Registration")
@@ -97,13 +99,16 @@ struct ContentView: View {
                           Image("pizza").blur(radius: isAuth ? 0 : 12 )
                           .ignoresSafeArea())
                 .animation(.easeInOut(duration: 0.5), value: isAuth)
+                .fullScreenCover(isPresented: $isTabBarShow ) {
+                    MainTabBar()
+                }
                 
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AuthView()
     }
 }

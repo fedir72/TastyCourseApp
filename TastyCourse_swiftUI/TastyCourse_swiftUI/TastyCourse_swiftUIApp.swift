@@ -11,7 +11,7 @@ import SwiftUI
 struct TastyCourse_swiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthView()
         }
     }
 }
