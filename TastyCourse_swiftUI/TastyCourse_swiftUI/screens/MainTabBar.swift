@@ -12,7 +12,7 @@ struct MainTabBar: View {
         TabView {
             CatalogueView()
                 .tabItem {
-                    Image(systemName: "menucard")
+                    Image(systemName: "list.number")
                     Text("catalogue")
                 }
             CartView()

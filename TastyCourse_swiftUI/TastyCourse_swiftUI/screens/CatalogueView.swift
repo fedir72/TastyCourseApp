@@ -8,9 +8,44 @@
 import SwiftUI
 
 struct CatalogueView: View {
+    let layout = [GridItem(.adaptive(minimum: screen.width/2.2))]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            
+        ScrollView(.vertical, showsIndicators: true) {
+            Section("Popular") {
+                ScrollView(.horizontal, showsIndicators: true) {
+                    LazyHGrid(rows: layout) {
+                        ForEach(CatalogViewModel.shared.popularProducts, id: \.id) { item in
+                            NavigationLink {
+                                ProductDetailView(product: item)
+                            } label: {
+                                ProductCell(product: item)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            Section("Pizzas") {
+                ScrollView(.vertical, showsIndicators: true) {
+                    LazyVGrid(columns: layout) {
+                        ForEach(CatalogViewModel.shared.popularProducts, id: \.id) { item in
+                            NavigationLink {
+                                ProductDetailView(product: item)
+                            } label: {
+                                ProductCell(product: item)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //.navigationBarHidden(true)
+        .navigationTitle("Catalogue")
+        }
     }
+    
 }
 
 struct CatalogueView_Previews: PreviewProvider {
