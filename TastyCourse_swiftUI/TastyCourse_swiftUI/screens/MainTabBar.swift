@@ -15,7 +15,7 @@ struct MainTabBar: View {
                     Image(systemName: "list.number")
                     Text("catalogue")
                 }
-            CartView(viewModel: CartViewModel())
+            CartView(viewModel: CartViewModel.shared)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("trash")

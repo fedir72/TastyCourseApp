@@ -23,6 +23,7 @@
 		BDDD2793292903790036CB04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD2792292903790036CB04 /* Extensions.swift */; };
 		BDDD279529290E5D0036CB04 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD279429290E5D0036CB04 /* CartViewModel.swift */; };
 		BDDD279829290EB90036CB04 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD279729290EB90036CB04 /* Position.swift */; };
+		BDDD279A292919D50036CB04 /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD2799292919D50036CB04 /* PositionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BDDD2792292903790036CB04 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BDDD279429290E5D0036CB04 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		BDDD279729290EB90036CB04 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		BDDD2799292919D50036CB04 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				BDD0766229277ECA00CB232B /* CartView.swift */,
 				BDD0766429277ED800CB232B /* ProfileView.swift */,
 				BD40EC6F2928C6F7006067A0 /* ProductDetailView.swift */,
+				BDDD2799292919D50036CB04 /* PositionCell.swift */,
 				BDD0766B2927843A00CB232B /* ComponentsViews */,
 			);
 			path = screens;
@@ -209,6 +212,7 @@
 				BDD0766329277ECA00CB232B /* CartView.swift in Sources */,
 				BD40EC702928C6F7006067A0 /* ProductDetailView.swift in Sources */,
 				BDD0765F2927792300CB232B /* MainTabBar.swift in Sources */,
+				BDDD279A292919D50036CB04 /* PositionCell.swift in Sources */,
 				BDDD279529290E5D0036CB04 /* CartViewModel.swift in Sources */,
 				BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */,
 				BDD0766129277E9200CB232B /* CatalogueView.swift in Sources */,

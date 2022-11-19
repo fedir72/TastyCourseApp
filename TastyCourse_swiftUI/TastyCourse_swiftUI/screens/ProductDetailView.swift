@@ -13,6 +13,8 @@ struct ProductDetailView: View {
     @State var size = "small"
     @State var count = 1
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -49,7 +51,12 @@ struct ProductDetailView: View {
                 Spacer()
             }
             Button{
-                print("add")
+                var position = Position(id: UUID().uuidString,
+                                        product: viewModel.product,
+                                        count: count)
+                position.product.price = viewModel.getPrice(size: self.size)
+                CartViewModel.shared.addPosition(position)
+                presentationMode.wrappedValue.dismiss()
             }label: {
                 Text("Add to cart")
                     .font(.title2.smallCaps())
