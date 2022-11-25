@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct AuthView: View {
     
@@ -14,6 +15,8 @@ struct AuthView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isTabBarShow = false
+    @State private var isShowAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
                 
@@ -49,14 +52,31 @@ struct AuthView: View {
                         
                         Button{
                             if isAuth {
-                                print("authorization")
+                                print("authorization in firebase")
                                 isTabBarShow.toggle()
                             } else {
                                 print("registration")
-                                self.email = ""
-                                self.password = ""
-                                self.confirmPassword = ""
-                                self.isAuth.toggle()
+                                guard password == confirmPassword else {
+                                    self.alertMessage = "passwords are not match "
+                                    self.isShowAlert.toggle()
+                                    return
+                                }
+                                AuthService.shared.sighnUp(
+                                    email: self.email,
+                                    password: self.password) { result in
+                                        switch result {
+                                        case .success(let user):
+                                            alertMessage = "you registered succefuly with email \(user.email ?? "no email")"
+                                            self.isShowAlert.toggle()
+                                            self.email = ""
+                                            self.password = ""
+                                            self.confirmPassword = ""
+                                            self.isAuth.toggle()
+                                        case .failure(let error):
+                                            alertMessage = "error of registration: \(error.localizedDescription)"
+                                            self.isShowAlert.toggle()
+                                    }
+                                }
                             }
                         } label: {
                             Text(isAuth ? "Войти" : "Registration")
@@ -90,8 +110,16 @@ struct AuthView: View {
                     .background(Color("whiteAlpha"))
                     .cornerRadius(24)
                     .padding(isAuth ? 20 : 10)
-                    
                     .padding(.vertical)
+                    .alert(alertMessage,
+                           isPresented: $isShowAlert) {
+                        Button {
+                            
+                        } label: {
+                            Text("Ok")
+                        }
+
+                    }
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
