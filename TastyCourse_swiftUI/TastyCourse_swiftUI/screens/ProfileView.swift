@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     @State var isAvaAlertPresent = false
     @State var isQuiteAlertPresent = false
     @State var isAuthViewPresented = false
+    
     var body: some View {
         VStack(alignment: .center) {
             HStack {

@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct MainTabBar: View {
+    
+    var viewModel: MainTabViewModel
+    
     var body: some View {
         TabView {
             CatalogueView()
@@ -29,8 +33,8 @@ struct MainTabBar: View {
     }
 }
 
-struct MainTabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabBar()
-    }
-}
+//struct MainTabBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainTabBar(viewModel: MainTabViewModel(user: User()))
+//    }
+//}

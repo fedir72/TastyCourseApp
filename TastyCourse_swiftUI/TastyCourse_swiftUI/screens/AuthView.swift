@@ -31,28 +31,46 @@ struct AuthView: View {
                     VStack {
                         TextField("Enter email", text: $email)
                             .padding()
-                            .background(Color("whiteAlpha"))
+                            .tint(.black)
+                            .background(Color.blue)
                             .cornerRadius(12)
                             .padding(5)
                             .padding(.horizontal,12)
                         SecureField("Enter password", text: $password)
                             .padding()
-                            .background(Color("whiteAlpha"))
+                            .background(Color.blue)   //(Color("whiteAlpha"))
                             .cornerRadius(12)
                             .padding(5)
                             .padding(.horizontal,12)
                         if !isAuth {
                             SecureField("repeat password", text: $confirmPassword)
                                 .padding()
-                                .background(Color("whiteAlpha"))
+                                .background(Color.blue)//(Color("whiteAlpha"))
                                 .cornerRadius(12)
                                 .padding(5)
                             .padding(.horizontal,12)                }
                         
                         
-                        Button{
+                        Button {
                             if isAuth {
                                 print("authorization in firebase")
+                                AuthService.shared.sighnIn(
+                                    email: self.email,
+                                    password: self.password) { result in
+                                        switch result {
+                                        case .success(_):
+                                            
+                                            isShowAlert.toggle()
+                                        case .failure(let failure):
+                                            alertMessage =
+                                            """
+                                              authorization error:
+                                              \(failure.localizedDescription)
+                                              """
+                                            isShowAlert.toggle()
+                                        }
+                                    }
+                                
                                 isTabBarShow.toggle()
                             } else {
                                 print("registration")
@@ -128,7 +146,9 @@ struct AuthView: View {
                           .ignoresSafeArea())
                 .animation(.easeInOut(duration: 0.5), value: isAuth)
                 .fullScreenCover(isPresented: $isTabBarShow ) {
-                    MainTabBar()
+                    
+                    let mainTabbarViewModel = MainTabViewModel(user: AuthService.shared.currentUser!)
+                    MainTabBar(viewModel: mainTabbarViewModel)
                 }
                 
         
