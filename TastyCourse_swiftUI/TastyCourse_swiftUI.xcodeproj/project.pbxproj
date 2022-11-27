@@ -21,6 +21,8 @@
 		BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB85B542926C8340053CCD0 /* AuthView.swift */; };
 		BDB85B572926C8350053CCD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB85B562926C8350053CCD0 /* Assets.xcassets */; };
 		BDB85B5A2926C8350053CCD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB85B592926C8350053CCD0 /* Preview Assets.xcassets */; };
+		BDCDF5A32933CBEF00DD56BE /* MVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF5A22933CBEE00DD56BE /* MVUser.swift */; };
+		BDCDF5A52933CD6B00DD56BE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF5A42933CD6B00DD56BE /* DatabaseService.swift */; };
 		BDD0765F2927792300CB232B /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0765E2927792300CB232B /* MainTabBar.swift */; };
 		BDD0766129277E9200CB232B /* CatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0766029277E9200CB232B /* CatalogueView.swift */; };
 		BDD0766329277ECA00CB232B /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0766229277ECA00CB232B /* CartView.swift */; };
@@ -45,6 +47,8 @@
 		BDB85B542926C8340053CCD0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BDB85B562926C8350053CCD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB85B592926C8350053CCD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDCDF5A22933CBEE00DD56BE /* MVUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVUser.swift; sourceTree = "<group>"; };
+		BDCDF5A42933CD6B00DD56BE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		BDD0765E2927792300CB232B /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		BDD0766029277E9200CB232B /* CatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueView.swift; sourceTree = "<group>"; };
 		BDD0766229277ECA00CB232B /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6FDB77292C2A4600953F52 /* AuthService.swift */,
+				BDCDF5A42933CD6B00DD56BE /* DatabaseService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				BDD07667292782EF00CB232B /* Product.swift */,
 				BDDD279729290EB90036CB04 /* Position.swift */,
+				BDCDF5A22933CBEE00DD56BE /* MVUser.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 				BD40EC702928C6F7006067A0 /* ProductDetailView.swift in Sources */,
 				BDD0765F2927792300CB232B /* MainTabBar.swift in Sources */,
 				BDDD279A292919D50036CB04 /* PositionCell.swift in Sources */,
+				BDCDF5A52933CD6B00DD56BE /* DatabaseService.swift in Sources */,
 				BDDD279529290E5D0036CB04 /* CartViewModel.swift in Sources */,
 				BDF227CF2931649300EDC03E /* MainTabViewModel.swift in Sources */,
 				BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */,
@@ -266,6 +273,7 @@
 				BDD07668292782EF00CB232B /* Product.swift in Sources */,
 				BDD0766D29278C6B00CB232B /* CatalogViewModel.swift in Sources */,
 				BD6FDB78292C2A4600953F52 /* AuthService.swift in Sources */,
+				BDCDF5A32933CBEF00DD56BE /* MVUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

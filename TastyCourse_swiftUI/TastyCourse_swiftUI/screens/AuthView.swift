@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct AuthView: View {
     
-    @State private var isAuth = true
+    @State private var isAuth = false
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""

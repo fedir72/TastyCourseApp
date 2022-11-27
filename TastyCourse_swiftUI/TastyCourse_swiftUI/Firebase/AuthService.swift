@@ -23,6 +23,20 @@ class AuthService {
                  completion: @escaping (Result<User,Error>) -> Void) {
         auth.createUser(withEmail: email, password: password ) { result, error in
             if let result {
+                let mvUser = MVUser(id: result.user.uid,
+                                    name: "",
+                                    phone: 0,
+                                    adress: "")
+                DatabaseService.shared.setUser(user: mvUser) { res in
+                    switch res {
+                         
+                    case .success(_):
+                        completion(.success(result.user))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+                
                 completion(.success(result.user))
             } else if let error {
                 completion(.failure(error))
