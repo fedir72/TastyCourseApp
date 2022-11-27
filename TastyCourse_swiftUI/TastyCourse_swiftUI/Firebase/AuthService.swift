@@ -27,7 +27,7 @@ class AuthService {
                                     name: "",
                                     phone: 0,
                                     adress: "")
-                DatabaseService.shared.setUser(user: mvUser) { res in
+                DatabaseService.shared.setProfile(user: mvUser) { res in
                     switch res {
                          
                     case .success(_):

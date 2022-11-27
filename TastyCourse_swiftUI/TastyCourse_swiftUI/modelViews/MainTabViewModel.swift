@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+ import FirebaseAuth
 
 class MainTabViewModel: ObservableObject {
     @Published var user: User

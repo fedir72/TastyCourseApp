@@ -24,7 +24,10 @@ struct MainTabBar: View {
                     Image(systemName: "cart")
                     Text("trash")
                 }
-            ProfileView()
+            ProfileView(viewModel: ProfileViewModel(profile: MVUser(id: "lkdfjfjfvnmvjgj", name: "some name",
+                                                                    phone: 1234567,
+                                                                    adress: "fuck off your adress")))
+           
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("profile")

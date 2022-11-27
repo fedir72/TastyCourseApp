@@ -13,6 +13,17 @@ struct ProfileView: View {
     @State var isQuiteAlertPresent = false
     @State var isAuthViewPresented = false
     
+    @StateObject var viewModel: ProfileViewModel
+    
+//    init( viewModel: ProfileViewModel) {
+//        self.viewModel = viewModel
+//    }
+    
+//    @State var name: String = "Name Famyli"
+//    @State var phone: Int = 0123456789
+//    @State var adress: String = "your adress will be here"
+    
+    
     var body: some View {
         VStack(alignment: .center) {
             HStack {
@@ -48,17 +59,25 @@ struct ProfileView: View {
                       
                     }
                 VStack(alignment: .trailing) {
-                    Text("Fedii Ihor Ivanovich")
-                        .font(.title2.bold())
-                    Text("+38099234567")
+                    TextField("Name",text: $viewModel.profile.name )
+                        .font(.body.bold())
+                        .autocorrectionDisabled()
+                        .autocapitalization(.none)
+                    HStack {
+                        Text("+38")
+                        TextField("Phone",
+                                  value: $viewModel.profile.phone,
+                                  format: .number)
+                    }
                 }
             }
             VStack(alignment: .leading,spacing:5){
                 Text("Delivery adress:")
                     .font(.title2.bold())
-                Text("Ukraine, kharkiv region, Kharkiv, Sumskaya str, build n.23")
+                TextField("Your adress", text: $viewModel.profile.adress)
                     .font(.title2.weight(.medium))
             }
+            .padding(.horizontal, 20)
             List {
                 Text("your orders will be here")
             }
@@ -86,13 +105,27 @@ struct ProfileView: View {
             }
             .fullScreenCover(isPresented: $isAuthViewPresented,onDismiss: nil) {
                 AuthView()
-            }
+             }
+            
         }
+        //close keyboard button(return)
+        .onSubmit {
+              print("on submit")
+            viewModel.setProfile()
+         }
+        .onAppear {
+            self.viewModel.getProfile()
+        }
+        
+        
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        let user = MVUser(id: "lkdfjfjfvnmvjgj", name: "some name",
+                          phone: 1234567,
+                          adress: "fuck off your adress")
+        ProfileView(viewModel: ProfileViewModel(profile: user))
     }
 }

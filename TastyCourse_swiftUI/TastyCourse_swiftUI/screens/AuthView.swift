@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct AuthView: View {
     
-    @State private var isAuth = false
+    @State private var isAuth = true
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -53,14 +53,13 @@ struct AuthView: View {
                         
                         Button {
                             if isAuth {
-                                print("authorization in firebase")
+                               // print("authorization in firebase")
                                 AuthService.shared.sighnIn(
                                     email: self.email,
                                     password: self.password) { result in
                                         switch result {
                                         case .success(_):
-                                            
-                                            isShowAlert.toggle()
+                                            isTabBarShow.toggle()
                                         case .failure(let failure):
                                             alertMessage =
                                             """
@@ -70,10 +69,8 @@ struct AuthView: View {
                                             isShowAlert.toggle()
                                         }
                                     }
-                                
-                                isTabBarShow.toggle()
                             } else {
-                                print("registration")
+                               // print("registration")
                                 guard password == confirmPassword else {
                                     self.alertMessage = "passwords are not match "
                                     self.isShowAlert.toggle()

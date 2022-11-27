@@ -18,7 +18,7 @@ class DatabaseService {
     
     private init() {}
     
-    func setUser(user: MVUser, completion: @escaping (Result<MVUser,Error>) -> Void) {
+    func setProfile(user: MVUser, completion: @escaping (Result<MVUser,Error>) -> Void) {
         usersRef.document(user.id).setData( user.representation ) { error  in
             if let error {
                 completion(.failure(error))
@@ -28,4 +28,23 @@ class DatabaseService {
         }
     }
     
+    func getProfile(completion: @escaping (Result<MVUser,Error>) -> Void ) {
+        usersRef.document(AuthService.shared.currentUser!.uid)
+            .getDocument { docSnapshot, error in
+                
+                guard let docSnapshot,
+                let data = docSnapshot.data() else { return }
+                let name = data["name"] as? String ?? "no name"
+                let id = data["id"] as? String ?? "no id"
+                let phone = data["phone"] as? Int ?? 100000000
+                let adress = data["adress"] as? String ?? "no adress"
+                
+                let user = MVUser(id: id,
+                                  name: name,
+                                  phone: phone,
+                                  adress: adress)
+                completion(.success(user))
+                
+            }
+    }
 }

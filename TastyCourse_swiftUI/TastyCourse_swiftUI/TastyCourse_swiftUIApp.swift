@@ -17,7 +17,11 @@ struct TastyCourse_swiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            if let user = AuthService.shared.currentUser {
+                MainTabBar(viewModel: MainTabViewModel(user: user))
+            } else {
+                AuthView()
+            }
         }
     }
     
