@@ -15,8 +15,8 @@ struct Product {
     var price: Int
     var descript: String
     
-    var ordersCount: Int
-    var isRecommend: Bool
+   // var ordersCount: Int
+   // var isRecommend: Bool
     
 }
 

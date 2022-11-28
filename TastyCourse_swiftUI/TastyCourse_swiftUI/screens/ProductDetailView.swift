@@ -80,9 +80,10 @@ struct ProductDetailView_Previews: PreviewProvider {
                            title: "big set",
                            imageUrl: "Not pizza",
                            price: 10,
-                           descript: "In that sense, a publisher is somewhat similar to a Swift iterator. One very valuable difference is that a Publisher’s completion could be either successful or a failure, and also that you need to actively pull values from an iterator, while a Publisher pushes values to its consumers.",
-                           ordersCount: 3,
-                           isRecommend: true)
+                           descript: "In that sense, a publisher is somewhat similar to a Swift iterator. One very valuable difference is that a Publisher’s completion could be either successful or a failure, and also that you need to actively pull values from an iterator, while a Publisher pushes values to its consumers."
+//                           ordersCount: 3,
+//                           isRecommend: true
+        )
         ProductDetailView(viewModel: ProductDetailModelView(product: prod))
     }
 }

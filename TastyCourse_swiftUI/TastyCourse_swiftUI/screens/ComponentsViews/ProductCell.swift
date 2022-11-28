@@ -46,9 +46,10 @@ struct ProductCell_Previews: PreviewProvider {
                            title: "big party set",
                            imageUrl: "",
                            price: 10,
-                           descript: "",
-                           ordersCount: 3,
-                           isRecommend: true)
+                           descript: ""
+//                           ordersCount: 3,
+//                           isRecommend: true
+        )
         
         ProductCell(product: prod)
          

@@ -28,4 +28,24 @@ struct Order: Identifiable {
         ]
     }
     
+    init(userId: String, date: Date, status: String ){
+        //var id: String = UUID().uuidString
+        self.userId = userId
+        //var positions = [Position]()
+        self.date = date
+        self.status = status
+    }
+    
+    init?(doc: QueryDocumentSnapshot) {
+        let data = doc.data()
+        guard let id = data["id"] as? String else {return nil}
+        guard let userId = data["userId"] as? String else {return nil}
+        guard let date = data["date"] as? Timestamp else {return nil}
+        guard let status = data["status"] as? String else {return nil}
+        
+        self.id = id
+        self.userId = userId
+        self.date = date.dateValue()
+        self.status = status
+    }
 }

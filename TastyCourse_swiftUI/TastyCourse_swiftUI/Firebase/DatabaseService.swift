@@ -21,6 +21,33 @@ class DatabaseService {
     
     private init() {}
     
+    func getOrders(by userId: String?,
+                   completion: @escaping (Result<[Order],Error>) -> Void) {
+        self.ordersRef.getDocuments { qsnap, error in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let qsnap {
+                var orders = [Order]()
+                for doc in qsnap.documents {
+                    if let userId {
+                        // for concrete user
+                if let order = Order(doc: doc), order.userId == userId {
+                    orders.append(order)
+                   }
+                    } else {
+                        // for all users(admin)
+                        if let order = Order(doc: doc) {
+                            orders.append(order)
+                           }
+                    }
+                }
+                completion(.success(orders))
+            }
+        }
+    }
+    
     func setOrder(order: Order,
                   completion: @escaping (Result<Order,Error>) -> Void) {
         ordersRef.document(order.id).setData(order.representation) { error in

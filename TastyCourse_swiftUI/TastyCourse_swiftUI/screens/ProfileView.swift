@@ -15,14 +15,6 @@ struct ProfileView: View {
     
     @StateObject var viewModel: ProfileViewModel
     
-//    init( viewModel: ProfileViewModel) {
-//        self.viewModel = viewModel
-//    }
-    
-//    @State var name: String = "Name Famyli"
-//    @State var phone: Int = 0123456789
-//    @State var adress: String = "your adress will be here"
-    
     
     var body: some View {
         VStack(alignment: .center) {
@@ -79,7 +71,13 @@ struct ProfileView: View {
             }
             .padding(.horizontal, 20)
             List {
-                Text("your orders will be here")
+                if viewModel.orders.count == 0 {
+                    Text("your orders will be here")
+                } else {
+                    ForEach(viewModel.orders, id: \.id) { order in
+                        OrderCell(order: order)
+                    }
+                }
             }
             .listStyle(.plain)
             
@@ -115,6 +113,7 @@ struct ProfileView: View {
          }
         .onAppear {
             self.viewModel.getProfile()
+            self.viewModel.getOrders()
         }
         
         

@@ -21,6 +21,7 @@
 		BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB85B542926C8340053CCD0 /* AuthView.swift */; };
 		BDB85B572926C8350053CCD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB85B562926C8350053CCD0 /* Assets.xcassets */; };
 		BDB85B5A2926C8350053CCD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB85B592926C8350053CCD0 /* Preview Assets.xcassets */; };
+		BDC2ACE6293565740048114E /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2ACE5293565740048114E /* OrderCell.swift */; };
 		BDCDF5A32933CBEF00DD56BE /* MVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF5A22933CBEE00DD56BE /* MVUser.swift */; };
 		BDCDF5A52933CD6B00DD56BE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF5A42933CD6B00DD56BE /* DatabaseService.swift */; };
 		BDCDF5A72933EC5300DD56BE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF5A62933EC5300DD56BE /* ProfileViewModel.swift */; };
@@ -50,6 +51,7 @@
 		BDB85B542926C8340053CCD0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BDB85B562926C8350053CCD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB85B592926C8350053CCD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDC2ACE5293565740048114E /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		BDCDF5A22933CBEE00DD56BE /* MVUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVUser.swift; sourceTree = "<group>"; };
 		BDCDF5A42933CD6B00DD56BE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		BDCDF5A62933EC5300DD56BE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD076692927841D00CB232B /* ProductCell.swift */,
+				BDC2ACE5293565740048114E /* OrderCell.swift */,
 			);
 			path = ComponentsViews;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */,
 				BDD0766129277E9200CB232B /* CatalogueView.swift in Sources */,
 				BDD0766529277ED800CB232B /* ProfileView.swift in Sources */,
+				BDC2ACE6293565740048114E /* OrderCell.swift in Sources */,
 				BDF8F5532934A146001500D1 /* OrederStatus.swift in Sources */,
 				BDD0766A2927841D00CB232B /* ProductCell.swift in Sources */,
 				BDDD2793292903790036CB04 /* Extensions.swift in Sources */,
