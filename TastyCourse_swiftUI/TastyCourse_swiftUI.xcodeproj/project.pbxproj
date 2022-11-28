@@ -36,6 +36,8 @@
 		BDDD279829290EB90036CB04 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD279729290EB90036CB04 /* Position.swift */; };
 		BDDD279A292919D50036CB04 /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD2799292919D50036CB04 /* PositionCell.swift */; };
 		BDF227CF2931649300EDC03E /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF227CE2931649300EDC03E /* MainTabViewModel.swift */; };
+		BDF8F55129349672001500D1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8F55029349672001500D1 /* Order.swift */; };
+		BDF8F5532934A146001500D1 /* OrederStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8F5522934A146001500D1 /* OrederStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		BDDD279729290EB90036CB04 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		BDDD2799292919D50036CB04 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		BDF227CE2931649300EDC03E /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
+		BDF8F55029349672001500D1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		BDF8F5522934A146001500D1 /* OrederStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrederStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,9 @@
 			children = (
 				BDD07667292782EF00CB232B /* Product.swift */,
 				BDDD279729290EB90036CB04 /* Position.swift */,
+				BDF8F5522934A146001500D1 /* OrederStatus.swift */,
 				BDCDF5A22933CBEE00DD56BE /* MVUser.swift */,
+				BDF8F55029349672001500D1 /* Order.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -264,11 +270,13 @@
 				BDD0765F2927792300CB232B /* MainTabBar.swift in Sources */,
 				BDDD279A292919D50036CB04 /* PositionCell.swift in Sources */,
 				BDCDF5A52933CD6B00DD56BE /* DatabaseService.swift in Sources */,
+				BDF8F55129349672001500D1 /* Order.swift in Sources */,
 				BDDD279529290E5D0036CB04 /* CartViewModel.swift in Sources */,
 				BDF227CF2931649300EDC03E /* MainTabViewModel.swift in Sources */,
 				BDB85B552926C8340053CCD0 /* AuthView.swift in Sources */,
 				BDD0766129277E9200CB232B /* CatalogueView.swift in Sources */,
 				BDD0766529277ED800CB232B /* ProfileView.swift in Sources */,
+				BDF8F5532934A146001500D1 /* OrederStatus.swift in Sources */,
 				BDD0766A2927841D00CB232B /* ProductCell.swift in Sources */,
 				BDDD2793292903790036CB04 /* Extensions.swift in Sources */,
 				BDB85B532926C8340053CCD0 /* TastyCourse_swiftUIApp.swift in Sources */,
