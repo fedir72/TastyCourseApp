@@ -120,11 +120,11 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = MVUser(id: "lkdfjfjfvnmvjgj", name: "some name",
-                          phone: 1234567,
-                          adress: "fuck off your adress")
-        ProfileView(viewModel: ProfileViewModel(profile: user))
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = MVUser(id: "lkdfjfjfvnmvjgj", name: "some name",
+//                          phone: 1234567,
+//                          adress: "fuck off your adress")
+//        ProfileView(viewModel: ProfileViewModel(profile: user))
+//    }
+//}

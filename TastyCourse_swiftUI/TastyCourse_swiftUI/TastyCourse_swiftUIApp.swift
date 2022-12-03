@@ -18,7 +18,11 @@ struct TastyCourse_swiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             if let user = AuthService.shared.currentUser {
-                MainTabBar(viewModel: MainTabViewModel(user: user))
+                if user.uid == "kTecgvRkYRPQkNlvZKP583h0GmF3" {
+                    AdminOrdersView()
+                } else {
+                    MainTabBar(viewModel: MainTabViewModel(user: user))
+                }
             } else {
                 AuthView()
             }

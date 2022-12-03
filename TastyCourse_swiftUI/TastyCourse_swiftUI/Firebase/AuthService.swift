@@ -57,4 +57,8 @@ class AuthService {
             
         }
     }
+    
+    func sighnOut() {
+        
+    }
 }
